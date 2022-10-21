@@ -96,19 +96,13 @@ class ChirpController extends Controller
     {
         $this->authorize('update', $chirp);
 
- 
-
         $validated = $request->validate([
 
             'message' => 'required|string|max:255',
 
         ]);
 
- 
-
         $chirp->update($validated);
-
- 
 
         return redirect(route('chirps.index'));
     }
